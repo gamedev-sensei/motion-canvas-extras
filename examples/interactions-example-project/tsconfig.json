@@ -1,0 +1,6 @@
+{
+  "extends": [ "@motion-canvas/ui/tsconfig.plugin.json", "@motion-canvas/2d/tsconfig.project.json" ],
+  "include": [
+      "src"
+  ]
+}
