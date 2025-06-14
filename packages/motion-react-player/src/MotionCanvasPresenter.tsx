@@ -17,7 +17,7 @@ export const MotionCanvasPresenter: FC<MotionCanvasPresenterProps> = ({
     width,
     height,
     resolutionScale,
-    ref
+    ...props
 }) => {
     const presenter = useMotionCanvasPresenter({
         ...project,
@@ -47,5 +47,5 @@ export const MotionCanvasPresenter: FC<MotionCanvasPresenterProps> = ({
         })
     }, [width, height, resolutionScale, project, stage, presenter])
 
-    return <MotionCanvasStage ref={ref} stage={presenter.stage} />
+    return <MotionCanvasStage {...props} stage={presenter.stage} />
 }
