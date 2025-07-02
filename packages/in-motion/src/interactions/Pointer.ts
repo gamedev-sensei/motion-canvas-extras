@@ -23,9 +23,11 @@ export function pointerInteractionFromEvent(e: PointerEvent): PointerInteraction
 
     const rect = target.getBoundingClientRect()
 
+    const relativeToTarget = new Vector2(e.clientX - rect.left, e.clientY - rect.top)
+
     return {
         type: "pointer",
         action: getAction(),
-        position: new Vector2(e.clientX - rect.left, e.clientY - rect.top)
+        position: relativeToTarget.div([ rect.width, rect.height ])
     }
 }

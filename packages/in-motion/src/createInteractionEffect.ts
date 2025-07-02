@@ -1,6 +1,16 @@
-import {createDeferredEffect, createEffect, createSignal, SubscribableEvent, useScene} from "@motion-canvas/core"
+import {createDeferredEffect, createEffect, createSignal, Scene, SubscribableEvent, useScene} from "@motion-canvas/core"
 import {config} from "./data";
 import {Interaction} from "./interactions";
+
+function adjustInteractionCoordinates(interaction: Interaction, scene: Scene): Interaction {
+    switch (interaction.type) {
+        case "pointer": return {
+            ...interaction,
+            position: interaction.position.mul(scene.getSize())
+        }
+        default: return interaction
+    }
+}
 
 export function createInteractionEffect(handler: (interaction: Interaction) => void) {
     const scene = useScene()
@@ -9,7 +19,7 @@ export function createInteractionEffect(handler: (interaction: Interaction) => v
     const interactions = createSignal<Interaction[]>([])
 
     function storeInteraction(interaction: Interaction) {
-        interactions([...interactions(), interaction])
+        interactions([...interactions(), adjustInteractionCoordinates(interaction, scene)])
     }
 
     createEffect(() => {
