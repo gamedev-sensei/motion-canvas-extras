@@ -1,7 +1,7 @@
 {
     "extends": "@motion-canvas/2d/tsconfig.project.json",
     "compilerOptions": {
-        "lib": [ "dom", "es6" ],
+        "lib": [ "dom", "es2020" ],
         "jsx": "react-jsx",
         "jsxImportSource": "react"
     },

@@ -3,6 +3,7 @@ import {Project, Stage, Vector2} from "@motion-canvas/core";
 import {useMotionCanvasPlayer, useMotionCanvasRender} from "./hooks";
 import React from "react";
 import {MotionCanvasStage} from "./MotionCanvasStage";
+import * as R from "remeda";
 
 export type MotionCanvasPlayerProps = {
     project: Project
@@ -12,6 +13,8 @@ export type MotionCanvasPlayerProps = {
     resolutionScale?: number
     playing: boolean
     loop?: boolean
+    speed?: number
+    volume?: number
 } & Omit<HTMLProps<HTMLDivElement>, "height" | "width">
 
 export const MotionCanvasPlayer: FC<MotionCanvasPlayerProps> = ({
@@ -21,7 +24,9 @@ export const MotionCanvasPlayer: FC<MotionCanvasPlayerProps> = ({
     height,
     resolutionScale,
     playing,
-    loop
+    loop,
+    speed,
+    volume
 }) => {
     const player = useMotionCanvasPlayer(project)
     const [stage] = useState(() => new Stage())
@@ -39,16 +44,19 @@ export const MotionCanvasPlayer: FC<MotionCanvasPlayerProps> = ({
         void player.configure(playerSettings)
     }, [width, height, resolutionScale, project, stage, player])
 
-    useEffect(() => player.setVariables(variables ?? {}), [variables]);
+    useEffect(() => player.setSpeed(speed ?? 1), [speed])
+    useEffect(() => player.setAudioVolume(volume ?? 1), [volume])
+
+    useEffect(() => player.setVariables(R.merge(project.variables, variables ?? {})), [variables])
     useMotionCanvasRender({ player, stage })
 
     useEffect(() => {
         player.activate()
         return () => player.deactivate()
-    }, [player]);
+    }, [player])
 
-    useEffect(() => player.togglePlayback(playing), [player, playing]);
-    useEffect(() => player.toggleLoop(loop), [player, loop]);
+    useEffect(() => player.togglePlayback(playing), [player, playing])
+    useEffect(() => player.toggleLoop(loop), [player, loop])
 
     return <MotionCanvasStage stage={stage} />
 }

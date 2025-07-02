@@ -1,4 +1,4 @@
-import {Project, Stage, Vector2} from "@motion-canvas/core";
+import {PresenterSettings, Project, Stage, Vector2} from "@motion-canvas/core";
 import React, {FC, HTMLProps, useEffect, useState} from "react";
 import {useMotionCanvasPresenter} from "./hooks";
 import {MotionCanvasStage} from "./MotionCanvasStage";
@@ -34,17 +34,15 @@ export const MotionCanvasPresenter: FC<MotionCanvasPresenterProps> = ({
     useEffect(() => {
         const projectSettings = project.meta.getFullRenderingSettings()
 
-        const playerSettings = {
+        const presenterSettings: PresenterSettings = {
             ...projectSettings,
             size: new Vector2(width ?? projectSettings.size.x, height ?? projectSettings.size.y),
-            resolutionScale: resolutionScale ?? projectSettings.resolutionScale
-        }
-
-        void presenter.present({
-            ...playerSettings,
+            resolutionScale: resolutionScale ?? projectSettings.resolutionScale,
             name: "presenter",
             slide: null
-        })
+        }
+
+        void presenter.present(presenterSettings)
     }, [width, height, resolutionScale, project, stage, presenter])
 
     return <MotionCanvasStage {...props} stage={presenter.stage} />

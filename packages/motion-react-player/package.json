@@ -12,6 +12,7 @@
     "@motion-canvas/core": "^3.17.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "remeda": "^2.23.2",
     "swr": "^2.3.3",
     "use-state-with-deps": "^1.1.3"
   },
