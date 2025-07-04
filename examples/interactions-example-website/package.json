@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@gamedev-sensei/interactions-example-project": "^1.0.0",
     "@gamedev-sensei/in-motion": "^1.0.0",
+    "@gamedev-sensei/interactions-example-project": "^1.0.0",
     "@gamedev-sensei/motion-react-player": "^1.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

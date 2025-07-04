@@ -2,6 +2,7 @@
   "name": "@gamedev-sensei/motion-canvas-extras",
   "repository": "git@github.com:gamedev-sensei/motion-canvas-extras.git",
   "scripts": {
+    "postinstall": "patch-package",
     "build": "turbo build",
     "dev": "turbo dev"
   },
@@ -11,8 +12,13 @@
   ],
   "license": "MIT",
   "private": true,
-  "packageManager": "yarn@1.22.22",
-  "devDependencies": {
-    "turbo": "^2.5.4"
+  "packageManager": "yarn@4.9.2",
+  "dependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@changesets/cli": "^2.29.5",
+    "@unts/patch-package": "^8.1.1",
+    "tsup": "^8.5.0",
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3"
   }
 }

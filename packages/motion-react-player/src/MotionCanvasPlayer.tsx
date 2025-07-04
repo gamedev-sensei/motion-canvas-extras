@@ -1,8 +1,8 @@
-import {FC, HTMLProps, useEffect, useState} from "react";
+import React, {FC, HTMLProps, useEffect} from "react";
 import {Project, Stage, Vector2} from "@motion-canvas/core";
 import {useMotionCanvasPlayer, useMotionCanvasRender} from "./hooks";
-import React from "react";
 import {MotionCanvasStage} from "./MotionCanvasStage";
+import {useDerived} from "@gamedev-sensei/react-extras";
 import * as R from "remeda";
 
 export type MotionCanvasPlayerProps = {
@@ -29,7 +29,7 @@ export const MotionCanvasPlayer: FC<MotionCanvasPlayerProps> = ({
     volume
 }) => {
     const player = useMotionCanvasPlayer(project)
-    const [stage] = useState(() => new Stage())
+    const stage = useDerived(() => new Stage(), [])
 
     useEffect(() => {
         const projectSettings = project.meta.getFullRenderingSettings()

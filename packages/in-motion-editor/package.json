@@ -2,18 +2,33 @@
   "name": "@gamedev-sensei/in-motion-editor",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "dist/index.cjs",
+  "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "exports": {
+    "import": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    },
+    "require": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "build": "tsup"
+    "build": "tsup && attw --pack ."
   },
   "dependencies": {
+    "@gamedev-sensei/in-motion": "1.0.0",
     "@motion-canvas/core": "^3.17.2",
-    "@motion-canvas/ui": "^3.17.2",
-    "@gamedev-sensei/in-motion": "1.0.0"
+    "@motion-canvas/ui": "^3.17.2"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@gamedev-sensei/tsup-config": "^1.1.2",
     "tsup": "^8.5.0"
   }
 }

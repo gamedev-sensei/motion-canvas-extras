@@ -17,9 +17,12 @@ export const Player: FC<{ src: string }> = ({ src }) => {
         return () => interactionSource.unbind(ref)
     }, [ref, interactionSource]);
 
-    if (project) return <MotionCanvasPresenter ref={setRef} project={project} loop variables={{
-        [interactionSourceVariableKey]: interactionSource.subscribable,
-        test: true
-    }} />
-    return null
+    const projectWithVariables = useMemo(() => ({
+        ...project,
+        variables: {[interactionSourceVariableKey]: interactionSource.subscribable}
+    }), [project, interactionSource])
+
+    if (!project) return null
+
+    return <MotionCanvasPresenter ref={setRef} project={projectWithVariables} loop />
 }

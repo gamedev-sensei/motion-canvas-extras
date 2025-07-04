@@ -1,8 +1,6 @@
 import {Player, Project} from "@motion-canvas/core";
-import {useStateWithDeps} from "use-state-with-deps";
+import {useDerived} from "@gamedev-sensei/react-extras";
 
 export const useMotionCanvasPlayer = (project: Project) => {
-    const [player] = useStateWithDeps(() => new Player(project), [project])
-
-    return player
+    return useDerived(() => new Player(project), [project])
 }

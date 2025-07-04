@@ -1,0 +1,43 @@
+name: Release
+on:
+  workflow_dispatch:
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Enable Corepack
+        run: corepack enable
+      - uses: actions/checkout@v4
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Apply changesets
+        run: yarn changeset version
+      - name: Install to update internal versions in the lockfile
+        run: yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
+      - name: Get version from package.json
+        id: version
+        run: echo "VERSION=v$(jq -r .version packages/in-motion/package.json)" >> $GITHUB_OUTPUT
+      - name: Commit and push changes
+        id: commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions[bot]
+          author_email: github-actions[bot]@users.noreply.github.com
+          message: "chore(release): ${{ steps.version.outputs.VERSION }}"
+          tag: ${{ steps.version.outputs.VERSION }}
+          push: true
+      - name: Create GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.version.outputs.VERSION }}
+          allowUpdates: true
+          name: Release ${{ steps.version.outputs.VERSION }}
+          generateReleaseNotes: true
