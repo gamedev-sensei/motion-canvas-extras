@@ -25,7 +25,7 @@ export const InMotionEditorPlugin = makeEditorPlugin(() => {
     })
 
     return {
-        name: "@gamedev-sensei/motion-canvas-interactions",
+        name: "@gamedev-sensei/in-motion-editor",
         presenter(presenter: Presenter) {
             presenterCanvasDispatcher.dispatch(presenter.stage.finalBuffer)
         },

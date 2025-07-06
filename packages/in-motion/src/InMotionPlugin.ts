@@ -15,7 +15,7 @@ export const InMotionPlugin = makePlugin(() => {
     })
 
     return {
-        name: "@gamedev-sensei/motion-canvas-interactions",
+        name: "@gamedev-sensei/in-motion",
         presenter(presenter: Presenter) {
             presenterCanvasDispatcher.dispatch(presenter.stage.finalBuffer)
         },
