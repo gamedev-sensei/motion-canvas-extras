@@ -1,6 +1,6 @@
 {
   "name": "@gamedev-sensei/in-motion-editor",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -22,7 +22,7 @@
     "build": "tsdown && attw --pack ."
   },
   "dependencies": {
-    "@gamedev-sensei/in-motion": "1.0.0",
+    "@gamedev-sensei/in-motion": "2.0.0",
     "@motion-canvas/core": "^3.17.2",
     "@motion-canvas/ui": "^3.17.2"
   },
