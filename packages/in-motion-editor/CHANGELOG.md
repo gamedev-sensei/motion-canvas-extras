@@ -1,5 +1,16 @@
 # @gamedev-sensei/in-motion-editor
 
+## 2.1.0
+
+### Minor Changes
+
+- bcceba2: Fixed editor interactions and implemented subscription cleanup
+
+### Patch Changes
+
+- Updated dependencies [bcceba2]
+  - @gamedev-sensei/in-motion@2.1.0
+
 ## 2.0.1
 
 ### Patch Changes
