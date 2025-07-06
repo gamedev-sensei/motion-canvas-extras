@@ -1,5 +1,13 @@
 # @gamedev-sensei/in-motion-editor
 
+## 2.0.1
+
+### Patch Changes
+
+- 5dd17bd: Updated package names to avoid collision
+- Updated dependencies [5dd17bd]
+  - @gamedev-sensei/in-motion@2.0.1
+
 ## 2.0.0
 
 ### Major Changes

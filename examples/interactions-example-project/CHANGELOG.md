@@ -1,5 +1,12 @@
 # @gamedev-sensei/interactions-example-project
 
+## 2.0.1
+
+### Patch Changes
+
+- Updated dependencies [5dd17bd]
+  - @gamedev-sensei/in-motion@2.0.1
+
 ## 2.0.0
 
 ### Major Changes
