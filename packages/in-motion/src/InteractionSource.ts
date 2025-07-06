@@ -35,6 +35,9 @@ export class InteractionSource {
     public unbind(element: HTMLElement) {
         InteractionSource.SupportedEvents.forEach(e => element.removeEventListener(e, this.eventHandler))
     }
+    public clear() {
+        this.dispatcher.clear()
+    }
 
     private handleEvent(e: Event) {
         const interaction = interactionFromEvent(e)

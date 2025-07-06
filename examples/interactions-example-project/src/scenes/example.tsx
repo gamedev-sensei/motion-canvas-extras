@@ -1,15 +1,14 @@
-import {Circle, makeScene2D, Node} from '@motion-canvas/2d'
-import {beginSlide, createRef, createSignal, loop, Reference, useScene, Vector2} from '@motion-canvas/core'
+import {Circle, makeScene2D, Node, Txt} from '@motion-canvas/2d'
+import {beginSlide, createRef, createSignal, loop, Reference, Vector2} from '@motion-canvas/core'
 import {createInteractionEffect} from "@gamedev-sensei/in-motion"
 
-function useDrag<N extends Node>(ref: Reference<N>) {
+function useDrag<N extends Node>(ref: Reference<N>): () => void {
     const dragging = createSignal(false)
     const offset = Vector2.createSignal(Vector2.zero)
-    const scene = useScene()
 
-    createInteractionEffect(interaction => {
+    return createInteractionEffect(interaction => {
         if (interaction.type !== "pointer") return
-        const pointerPos = (new Vector2(interaction.position)).sub(scene.getSize().scale(0.5))
+        const pointerPos = interaction.position
 
         switch (interaction.action) {
             case "down": {
@@ -33,10 +32,17 @@ function useDrag<N extends Node>(ref: Reference<N>) {
 
 export default makeScene2D(function* (view) {
     const circle = createRef<Circle>()
+    const txtRef = createRef<Txt>()
 
-    view.add(<Circle ref={circle} size={320} fill={'lightseagreen'} />)
+    createInteractionEffect(interaction => {
+        if (interaction.type !== "pointer") return
+        txtRef().text(interaction.position.toString())
+    })
 
     useDrag(circle)
+
+    view.add(<Circle ref={circle} size={320} fill={'lightseagreen'}/>)
+    view.add(<Txt ref={txtRef} position={[0, 0]} fill="black" size={50}>Vector2(0, 0)</Txt>)
 
     yield loop(() => circle().scale(2, 2).to(1, 2))
     yield* beginSlide("end")

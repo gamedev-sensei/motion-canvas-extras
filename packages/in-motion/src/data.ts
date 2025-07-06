@@ -1,3 +1,4 @@
 export const config = {
-    interactionSourceVariableKey: "in-motion-source"
+    interactionSourceVariableKey: "@gamedev-sensei/in-motion/source",
+    presenterVariableKey: "@gamedev-sensei/in-motion/presenter",
 }

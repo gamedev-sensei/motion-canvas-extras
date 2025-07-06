@@ -7,17 +7,19 @@ export const InMotionPlugin = makePlugin(() => {
 
     let presenterCanvas: HTMLCanvasElement | null = null
 
-    const presenterCanvasDispatcher = new EventDispatcher<HTMLCanvasElement>()
-    presenterCanvasDispatcher.subscribe(newCanvas => {
+    const presenterDispatcher = new EventDispatcher<Presenter>()
+    presenterDispatcher.subscribe(presenter => {
         if (presenterCanvas !== null) interactionSource.unbind(presenterCanvas)
-        presenterCanvas = newCanvas
+        presenterCanvas = presenter.stage.finalBuffer
         interactionSource.bind(presenterCanvas)
+
+        presenter.playback.onSceneChanged.subscribe(interactionSource.clear.bind(interactionSource))
     })
 
     return {
         name: "@gamedev-sensei/in-motion",
         presenter(presenter: Presenter) {
-            presenterCanvasDispatcher.dispatch(presenter.stage.finalBuffer)
+            presenterDispatcher.dispatch(presenter)
         },
         project(project: Project) {
             (project.variables ??= {})[config.interactionSourceVariableKey] = interactionSource.subscribable
