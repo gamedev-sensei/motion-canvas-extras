@@ -24,7 +24,10 @@ jobs:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
       - name: Get version from package.json
         id: version
-        run: echo "VERSION=v$(jq -r .version packages/in-motion/package.json)" >> $GITHUB_OUTPUT
+        run: |
+          FILE=$(echo packages/*/package.json | head -n 1)
+          VERSION=v$(jq -r .version "$FILE")
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
       - name: Commit and push changes
         id: commit
         uses: EndBug/add-and-commit@v9

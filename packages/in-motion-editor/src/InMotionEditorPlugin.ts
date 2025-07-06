@@ -1,10 +1,8 @@
 import {makeEditorPlugin} from "@motion-canvas/ui";
-import {EventDispatcher, Presenter, Project} from "@motion-canvas/core";
-import {InteractionSource, interactionSourceVariableKey} from "@gamedev-sensei/in-motion";
+import {EventDispatcher, Presenter} from "@motion-canvas/core";
+import {InteractionSource} from "@gamedev-sensei/in-motion";
 
-export const InteractionsPlugin = makeEditorPlugin(() => {
-    const interactionSource = new InteractionSource()
-
+export const InMotionEditorPlugin = makeEditorPlugin(() => {
     let presenterCanvas: HTMLCanvasElement | null = null
     let presenterOverlayCanvas: HTMLCanvasElement | null = null
 
@@ -17,11 +15,6 @@ export const InteractionsPlugin = makeEditorPlugin(() => {
     }
 
     const presenterCanvasDispatcher = new EventDispatcher<HTMLCanvasElement>()
-    presenterCanvasDispatcher.subscribe(newCanvas => {
-        if (presenterCanvas !== null) interactionSource.unbind(presenterCanvas)
-        presenterCanvas = newCanvas
-        interactionSource.bind(presenterCanvas)
-    })
 
     const presenterOverlayCanvasDispatcher = new EventDispatcher<HTMLCanvasElement>()
     presenterOverlayCanvasDispatcher.subscribe(newCanvas => {
@@ -40,9 +33,6 @@ export const InteractionsPlugin = makeEditorPlugin(() => {
             drawHook: () => ctx => {
                 presenterOverlayCanvasDispatcher.dispatch(ctx.canvas);
             }
-        },
-        project(project: Project) {
-            (project.variables ??= {})[interactionSourceVariableKey] = interactionSource.subscribable
         }
     }
 })

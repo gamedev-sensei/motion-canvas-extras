@@ -19,10 +19,10 @@
     }
   },
   "scripts": {
-    "build": "tsup && attw --pack ."
+    "build": "tsdown && attw --pack ."
   },
   "dependencies": {
-    "@gamedev-sensei/react-extras": "^1.1.2",
+    "@gamedev-sensei/react-extras": "^2.0.0",
     "@motion-canvas/core": "^3.17.2",
     "react": "^18||^19",
     "react-dom": "^18||^19",
@@ -31,9 +31,9 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
-    "@gamedev-sensei/tsup-config": "^1.1.2",
+    "@gamedev-sensei/tsdown-config": "^2.0.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
-    "tsup": "^8.5.0"
+    "tsdown": "^0.12.9"
   }
 }

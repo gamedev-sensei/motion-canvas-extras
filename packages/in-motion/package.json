@@ -19,14 +19,14 @@
     }
   },
   "scripts": {
-    "build": "tsup && attw --pack ."
+    "build": "tsdown && attw --pack ."
   },
   "dependencies": {
     "@motion-canvas/core": "^3.17.2"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
-    "@gamedev-sensei/tsup-config": "^1.1.2",
-    "tsup": "^8.5.0"
+    "@gamedev-sensei/tsdown-config": "^2.0.0",
+    "tsdown": "^0.12.9"
   }
 }

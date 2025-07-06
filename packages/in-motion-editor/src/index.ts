@@ -1,1 +1,1 @@
-export * from "./InteractionsPlugin"
+export * from "./InMotionEditorPlugin"
