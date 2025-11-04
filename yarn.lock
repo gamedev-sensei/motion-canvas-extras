@@ -1206,12 +1206,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gamedev-sensei/in-motion-editor@npm:^2.2.1, @gamedev-sensei/in-motion-editor@workspace:packages/in-motion-editor":
+"@gamedev-sensei/in-motion-editor@npm:^2.2.2, @gamedev-sensei/in-motion-editor@workspace:packages/in-motion-editor":
   version: 0.0.0-use.local
   resolution: "@gamedev-sensei/in-motion-editor@workspace:packages/in-motion-editor"
   dependencies:
     "@arethetypeswrong/cli": "npm:^0.18.2"
-    "@gamedev-sensei/in-motion": "npm:2.2.1"
+    "@gamedev-sensei/in-motion": "npm:2.2.2"
     "@gamedev-sensei/tsdown-config": "npm:^2.0.0"
     "@motion-canvas/core": "npm:^3.17.2"
     "@motion-canvas/ui": "npm:^3.17.2"
@@ -1219,7 +1219,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@gamedev-sensei/in-motion@npm:2.2.1, @gamedev-sensei/in-motion@npm:^2.2.1, @gamedev-sensei/in-motion@workspace:packages/in-motion":
+"@gamedev-sensei/in-motion@npm:2.2.2, @gamedev-sensei/in-motion@npm:^2.2.2, @gamedev-sensei/in-motion@workspace:packages/in-motion":
   version: 0.0.0-use.local
   resolution: "@gamedev-sensei/in-motion@workspace:packages/in-motion"
   dependencies:
@@ -1230,12 +1230,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@gamedev-sensei/interactions-example-project@npm:^2.2.1, @gamedev-sensei/interactions-example-project@workspace:examples/interactions-example-project":
+"@gamedev-sensei/interactions-example-project@npm:^2.2.2, @gamedev-sensei/interactions-example-project@workspace:examples/interactions-example-project":
   version: 0.0.0-use.local
   resolution: "@gamedev-sensei/interactions-example-project@workspace:examples/interactions-example-project"
   dependencies:
-    "@gamedev-sensei/in-motion": "npm:^2.2.1"
-    "@gamedev-sensei/in-motion-editor": "npm:^2.2.1"
+    "@gamedev-sensei/in-motion": "npm:^2.2.2"
+    "@gamedev-sensei/in-motion-editor": "npm:^2.2.2"
     "@motion-canvas/2d": "npm:^3.17.2"
     "@motion-canvas/core": "npm:^3.17.2"
     "@motion-canvas/ffmpeg": "npm:^1.1.0"
@@ -1252,9 +1252,9 @@ __metadata:
   resolution: "@gamedev-sensei/interactions-example-website@workspace:examples/interactions-example-website"
   dependencies:
     "@eslint/js": "npm:^9.25.0"
-    "@gamedev-sensei/in-motion": "npm:^2.2.1"
-    "@gamedev-sensei/interactions-example-project": "npm:^2.2.1"
-    "@gamedev-sensei/motion-react-player": "npm:^2.2.1"
+    "@gamedev-sensei/in-motion": "npm:^2.2.2"
+    "@gamedev-sensei/interactions-example-project": "npm:^2.2.2"
+    "@gamedev-sensei/motion-react-player": "npm:^2.2.2"
     "@types/react": "npm:^19.1.2"
     "@types/react-dom": "npm:^19.1.2"
     "@vitejs/plugin-react": "npm:^4.4.1"
@@ -1284,7 +1284,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@gamedev-sensei/motion-react-player@npm:^2.2.1, @gamedev-sensei/motion-react-player@workspace:packages/motion-react-player":
+"@gamedev-sensei/motion-react-player@npm:^2.2.2, @gamedev-sensei/motion-react-player@workspace:packages/motion-react-player":
   version: 0.0.0-use.local
   resolution: "@gamedev-sensei/motion-react-player@workspace:packages/motion-react-player"
   dependencies:

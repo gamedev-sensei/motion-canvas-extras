@@ -1,5 +1,11 @@
 # @gamedev-sensei/in-motion-editor
 
+## 2.2.2
+
+### Patch Changes
+
+- @gamedev-sensei/in-motion@2.2.2
+
 ## 2.2.1
 
 ### Patch Changes

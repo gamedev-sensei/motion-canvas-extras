@@ -1,5 +1,7 @@
 # @gamedev-sensei/motion-react-player
 
+## 2.2.2
+
 ## 2.2.1
 
 ## 2.2.0

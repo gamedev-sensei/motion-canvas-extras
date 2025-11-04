@@ -1,5 +1,12 @@
 # @gamedev-sensei/interactions-example-project
 
+## 2.2.2
+
+### Patch Changes
+
+- 9a489ef: Fixed example project build
+  - @gamedev-sensei/in-motion@2.2.2
+
 ## 2.2.1
 
 ### Patch Changes
