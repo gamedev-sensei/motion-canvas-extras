@@ -1,5 +1,11 @@
 # @gamedev-sensei/in-motion
 
+## 2.2.3
+
+### Patch Changes
+
+- f2c8b88: Fix starting state
+
 ## 2.2.2
 
 ## 2.2.1
