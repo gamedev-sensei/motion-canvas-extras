@@ -1,5 +1,11 @@
 # @gamedev-sensei/in-motion
 
+## 2.2.4
+
+### Patch Changes
+
+- b47f617: Fix starting state
+
 ## 2.2.3
 
 ### Patch Changes
