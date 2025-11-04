@@ -1,5 +1,5 @@
 export * from "./interactions"
-export * from "./elements"
+export * from "./effects"
 export * from "./createInteractionEffect"
 export * from "./InteractionSource"
 export * from "./InMotionPlugin"
