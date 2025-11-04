@@ -1,5 +1,14 @@
 # @gamedev-sensei/interactions-example-website
 
+## 2.2.1
+
+### Patch Changes
+
+- Updated dependencies [9ff3c90]
+  - @gamedev-sensei/in-motion@2.2.1
+  - @gamedev-sensei/interactions-example-project@2.2.1
+  - @gamedev-sensei/motion-react-player@2.2.1
+
 ## 2.2.0
 
 ### Patch Changes

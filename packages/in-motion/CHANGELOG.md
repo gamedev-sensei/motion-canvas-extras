@@ -1,5 +1,11 @@
 # @gamedev-sensei/in-motion
 
+## 2.2.1
+
+### Patch Changes
+
+- 9ff3c90: Fixed build
+
 ## 2.2.0
 
 ### Minor Changes
