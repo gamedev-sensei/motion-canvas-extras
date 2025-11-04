@@ -1,5 +1,12 @@
 # @gamedev-sensei/in-motion-editor
 
+## 2.2.0
+
+### Patch Changes
+
+- Updated dependencies [8454d47]
+  - @gamedev-sensei/in-motion@2.2.0
+
 ## 2.1.0
 
 ### Minor Changes

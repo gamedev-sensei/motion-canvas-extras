@@ -1,5 +1,11 @@
 # @gamedev-sensei/in-motion
 
+## 2.2.0
+
+### Minor Changes
+
+- 8454d47: added drag, slider and hover effects
+
 ## 2.1.0
 
 ### Minor Changes
