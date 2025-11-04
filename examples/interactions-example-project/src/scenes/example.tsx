@@ -1,7 +1,7 @@
 import {Circle, makeScene2D, Txt} from '@motion-canvas/2d'
 import {beginSlide, createRef, createSignal, loop} from '@motion-canvas/core'
 import {createInteractionEffect} from "@gamedev-sensei/in-motion"
-import {createDrag} from "@gamedev-sensei/in-motion/src/effects";
+import {createDrag} from "@gamedev-sensei/in-motion";
 
 export default makeScene2D(function* (view) {
     const circle = createSignal<Circle | null>(null)
