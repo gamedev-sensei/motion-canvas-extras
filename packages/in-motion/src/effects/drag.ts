@@ -6,10 +6,10 @@ function id<T>(v: T): T {
     return v
 }
 
-export function createDrag<T extends Node>(ref: SimpleSignal<T | null>, constraint: (pos: Vector2) => Vector2 = id) {
+export function createDrag<T extends Node>(ref: SimpleSignal<T | null>, constraint: (pos: Vector2, initial: boolean) => Vector2 = id) {
     const dragging = createSignal(false)
     const dragPos = createSignal<Vector2 | null>(null)
-    const pos = createSignal(() => constraint(dragPos() ?? ref()?.absolutePosition() ?? Vector2.zero))
+    const pos = createSignal(() => constraint(dragPos() ?? ref()?.absolutePosition() ?? Vector2.zero, dragPos() === null))
 
     createInteractionEffect(i => {
         if (i.type !== "pointer") return
@@ -22,6 +22,7 @@ export function createDrag<T extends Node>(ref: SimpleSignal<T | null>, constrai
                 const box = elem.cacheBBox()
 
                 dragging(box.includes(localPos))
+                dragPos(i.position)
                 return
             }
             case "up": {

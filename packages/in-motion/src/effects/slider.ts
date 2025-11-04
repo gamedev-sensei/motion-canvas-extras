@@ -13,15 +13,19 @@ type SliderParams<H extends Node, R extends Node> = {
 }
 
 export function createSlider<H extends Node, R extends Node>({ handleRef, railRef, progress }: SliderParams<H, R>) {
-    createDrag(handleRef, pos => {
+    createDrag(handleRef, (pos, initial) => {
         const rail = railRef()
         if (!rail) return pos
-        const localPos = pos.transformAsPoint(rail.worldToLocal())
+
         const bounds = rail.cacheBBox()
 
-        const progressValue = clamp((localPos.x - bounds.x) / bounds.width, 0, 1)
-        progress(progressValue)
-        const localHandlePos = new Vector2([progressValue * bounds.width + bounds.x, bounds.y + bounds.height / 2])
+        if (!initial) {
+            const localPos = pos.transformAsPoint(rail.worldToLocal())
+            const progressValue = clamp((localPos.x - bounds.x) / bounds.width, 0, 1)
+            progress(progressValue)
+        }
+
+        const localHandlePos = new Vector2([progress() * bounds.width + bounds.x, bounds.y + bounds.height / 2])
         return localHandlePos.transformAsPoint(rail.localToWorld())
     })
 }
