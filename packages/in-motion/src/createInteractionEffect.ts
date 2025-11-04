@@ -9,17 +9,6 @@ import {config} from "./data";
 import {Interaction} from "./interactions";
 import { Scene2D } from "@motion-canvas/2d";
 
-function adjustInteractionCoordinates(interaction: Interaction, scene: Scene2D): Interaction {
-    const size = scene.getSize()
-    switch (interaction.type) {
-        case "pointer": return {
-            ...interaction,
-            position: scene.transformMousePosition(interaction.position.x * size.x, interaction.position.y * size.y)!
-        }
-        default: return interaction
-    }
-}
-
 function noop(): void {}
 
 export function createInteractionEffect(handler: (interaction: Interaction) => void): () => void {
@@ -34,7 +23,7 @@ export function createInteractionEffect(handler: (interaction: Interaction) => v
     const interactions = createSignal<Interaction[]>([])
 
     function storeInteraction(interaction: Interaction) {
-        interactions([...interactions(), adjustInteractionCoordinates(interaction, scene2D)])
+        interactions([...interactions(), interaction.adjustToScene(scene2D)])
     }
 
     const cleanupSubscribe = createEffect(() => {
