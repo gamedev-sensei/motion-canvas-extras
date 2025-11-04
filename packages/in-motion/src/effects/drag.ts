@@ -39,7 +39,7 @@ export function createDrag<T extends Node>(ref: SimpleSignal<T | null>, constrai
     createEffect(() => {
         const elem = ref()
         if (!elem) return
-        elem.absolutePosition(pos)
+        elem.absolutePosition(pos())
     })
 
     return { dragging }
