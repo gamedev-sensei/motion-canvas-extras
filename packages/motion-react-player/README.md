@@ -1,4 +1,6 @@
-# Motion Canvas player low-level player components for Motion Canvas animations
+# Motion Canvas Player low-level player components for Motion Canvas animations
+
+Provides low-level player components for Motion Canvas animations
 
 # Documentation
 
