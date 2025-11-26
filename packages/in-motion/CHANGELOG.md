@@ -1,5 +1,7 @@
 # @gamedev-sensei/in-motion
 
+## 2.3.0
+
 ## 2.2.4
 
 ### Patch Changes

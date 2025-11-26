@@ -1,7 +1,7 @@
 {
   "name": "@gamedev-sensei/in-motion",
   "repository": "git@github.com:gamedev-sensei/motion-canvas-extras.git",
-  "version": "2.2.4",
+  "version": "2.3.0",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

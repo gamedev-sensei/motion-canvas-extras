@@ -1,7 +1,7 @@
 {
   "name": "@gamedev-sensei/interactions-example-project",
   "private": true,
-  "version": "2.2.4",
+  "version": "2.3.0",
   "main": "dist/src/project.js",
   "scripts": {
     "dev": "vite",
@@ -9,14 +9,14 @@
     "build": "tsc && vite build"
   },
   "dependencies": {
-    "@gamedev-sensei/in-motion": "^2.2.4",
+    "@gamedev-sensei/in-motion": "^2.3.0",
     "@motion-canvas/2d": "^3.17.2",
     "@motion-canvas/core": "^3.17.2",
     "@motion-canvas/ffmpeg": "^1.1.0",
     "@types/react": "^19.1.6"
   },
   "devDependencies": {
-    "@gamedev-sensei/in-motion-editor": "^2.2.4",
+    "@gamedev-sensei/in-motion-editor": "^2.3.0",
     "@motion-canvas/ui": "^3.17.2",
     "@motion-canvas/vite-plugin": "^3.17.2",
     "typescript": "^5.2.2",

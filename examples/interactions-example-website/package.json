@@ -1,7 +1,7 @@
 {
   "name": "@gamedev-sensei/interactions-example-website",
   "private": true,
-  "version": "2.2.4",
+  "version": "2.3.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@gamedev-sensei/in-motion": "^2.2.4",
-    "@gamedev-sensei/interactions-example-project": "^2.2.4",
-    "@gamedev-sensei/motion-react-player": "^2.2.4",
+    "@gamedev-sensei/in-motion": "^2.3.0",
+    "@gamedev-sensei/interactions-example-project": "^2.3.0",
+    "@gamedev-sensei/motion-react-player": "^2.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-error-boundary": "^6.0.0"

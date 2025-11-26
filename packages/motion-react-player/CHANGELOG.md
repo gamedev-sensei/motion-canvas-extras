@@ -1,5 +1,11 @@
 # @gamedev-sensei/motion-react-player
 
+## 2.3.0
+
+### Minor Changes
+
+- a35e34e: Removed useRemoteMotionCanvasProject hook, because import cannot be used in a package like that when using nextjs.
+
 ## 2.2.4
 
 ## 2.2.3
