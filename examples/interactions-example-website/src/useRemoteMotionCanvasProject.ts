@@ -1,4 +1,4 @@
-import { Project } from "@motion-canvas/core"
+import { type Project } from "@motion-canvas/core"
 import useSWR from "swr";
 
 async function fetchProject(src: string): Promise<Project> {
